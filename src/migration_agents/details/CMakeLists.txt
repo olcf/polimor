@@ -1,0 +1,2 @@
+add_library(migration_agents_impl lfs_migrate_migration_agent_impl.cc)
+target_link_libraries(migration_agents_impl messaging)

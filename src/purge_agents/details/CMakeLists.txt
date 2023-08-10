@@ -1,0 +1,3 @@
+
+add_library(purge_agents_impl OBJECT purge_agent_impl.cc)
+target_link_libraries(purge_agents_impl messaging messaging_impl)

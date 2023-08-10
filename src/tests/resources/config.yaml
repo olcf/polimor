@@ -1,0 +1,49 @@
+---
+version: 0.0.1
+messaging_service:
+  backend: nats
+  config:
+    servers:
+    - host: localhost
+      port: 4222
+    queues:
+      scan:
+        stream_name: scan
+        consumer_name: scan-files-consumer
+        subject: scan.files.results
+        num_replicas: 1
+      purge:
+        stream_name: purge
+        consumer_name: purge-files-consumer
+        subject: purge.files.requests
+        num_replicas: 1
+      migration:
+        stream_name: migration
+        consumer_name: migration-files-consumer
+        subject: migration.files.requests
+        num_replicas: 1
+agents:
+  scan_agents:
+  - id: scan_agent0
+    interval: 1d
+    root_directory: "/root0"
+    queue: scan
+  - id: scan_agent1
+    interval: 1d
+    root_directory: "/root1"
+    queue: scan
+  policy_agents:
+  - id: policy_agent0
+    scan_queue: scan
+    purge_queue: purge
+    migration_queue: migration
+  - id: policy_agent1
+    scan_queue: scan
+    purge_queue: purge
+    migration_queue: migration
+  purge_agents:
+  - id: purge_agent0
+    queue: purge
+  migration_agents:
+  - id: migration_agent0
+    queue: migration

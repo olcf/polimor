@@ -1,0 +1,7 @@
+[requires]
+yaml-cpp/0.7.0
+valijson/1.0.1
+
+[generators]
+CMakeDeps
+CMakeToolchain
