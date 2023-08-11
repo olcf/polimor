@@ -12,7 +12,7 @@ To install and run PoliMOR you need to have the following pre-requisites.
 
 
 
-#### Building and Installation
+### Building and Installation
 
 Follow these steps to build and install PoliMOR
 1. Clone the repository
