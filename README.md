@@ -24,7 +24,8 @@ Follow these steps to build and install PoliMOR
 1. Start NATS servers: nats-server -c <nats-server.conf>
    More details about nats-server.conf can be found in docs directory.
 2. Start agents:
-
+   Providing -h option with agents displays all flags and options that the agents accepts through command line.
+   Agents can be started by specifying their id flag. All other options can be specified in the config.yaml file for convenience.
 
 
 
