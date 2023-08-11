@@ -21,3 +21,4 @@ The backend messaging system used by PoliMOR is NATS. For better resiliency and 
 
 3. Starting the agents 
 ----------------------
+Providing -h option with agents displays all flags and options that the agents accepts through command line. Agents can be started by specifying their id flag. All other options can be specified in the config.yaml file for convenience.
